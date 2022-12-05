@@ -297,6 +297,12 @@ h5{
     font-size: 30px;
     font-weight: bold;
 }
+
+.contact-me-p {
+    width: 70%;
+    text-align: center  ;
+}
+
 .button-two{
     background-color: rgb(165, 42, 73);
     color: whitesmoke;
