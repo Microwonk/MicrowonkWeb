@@ -1,4 +1,4 @@
-# mikrowonk.github.io
+# microwonk.github.io
 Private Webpage
 
-Link: https://microwonk.github.io/mikrowonk.github.io/
+Link: https://microwonk.github.io/MicrowonkWeb/
