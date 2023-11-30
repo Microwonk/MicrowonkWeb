@@ -31,7 +31,7 @@
 </head>
 
 <body>
-    <canvas id="background" width="100%" height="100%"></canvas>
+    <canvas id="background"></canvas>
 	<div class="page-wrapper">
 		<header class="page-header">
 			<a href="/" class="logo">
@@ -41,41 +41,64 @@
             <div class="subtitle"></div>
 		</header>
 
-		<div class="project-container">
-
-			<div class="project">
-				<a href="lovux" class="hoverable"><img src="assets/img/"></a>
-				<p class="game-title">Vulkan Game Engine</p>
+		<h2 class="heading-sm"><span onclick="toggleVisible(this, '#projects')">v</span>Projects <h2>
+		<section id="projects">
+			<div class="project-container">
+				<div class="project">
+					<a href="https://github.com/Microwonk/VulkanGameEngine" target="_blank" class="hoverable"><img style="padding-bottom: 7vh; padding-top: 7vh;" src="img/vulkan.png"></a>
+					<p>Vulkan Game Engine</p>
+				</div>
+	
+				<div class="project">
+					<a href="https://github.com/Microwonk/Chess-Engine" target="_blank" class="hoverable"><img style="image-rendering: pixelated; padding-left: 3vw; padding-right: 3vw; padding-bottom: 6vh;" src="img/WN.png"></a>
+					<p>Java Chess Engine</p>
+				</div>
+	
+				<div class="project">
+					<a href="https://github.com/Microwonk/rusty_chess" target="_blank" class="hoverable"><img style="padding-bottom: 5vh; padding-top: 6vh;" src="img/rust.png"></a>
+					<p>Rusty Chess</p>
+				</div>
+	
 			</div>
+		</section>
 
-			<div class="project">
-				<a href="quadrata" class="hoverable"><img src="assets/img/"></a>
-				<p>Java Chess</p>
+		<h2 class="heading-sm" style="margin-top: 3vh;"><span onclick="toggleVisible(this, '#work')">v</span>Other Work</h2>
+		<section id="work">
+			<div class="project-container">
+				<p style="color: grey;">Nothing to show yet ...</p>
+	
 			</div>
+		</section>
 
-			<div class="project">
-				<a href="#" class="hoverable"><img src="assets/img/"></a>
-				<p>Rusty Chess</p>
-			</div>
-
-		</div>
-
-		<a class="main-button" href="/portfolio.pdf">は / Portfolio \な</a>
+		<a class="portfolio-button" href="/portfolio.pdf">は / Portfolio \な</a>
 
 		<footer>
 			<div class="social-links">
-				<a target="_blank" href="/" title="Discord"><i class="fa-brands fa-discord"></i></a>
+				<a target="_blank" href="https://discordapp.com/users/444924590913749002" title="Discord"><i class="fa-brands fa-discord"></i></a>
 				<a target="_blank" href="https://instagram.com/nic_ol_ass" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-				<a target="_blank" href="/" title="Linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
-				<a target="_blank" href="/" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-				<a target="_blank" href="/" title="Steam"><i class="fa-brands fa-steam"></i></a>
-				<a target="_blank" href="/" title="Google Play Store"><i class="fa-brands fa-google-play"></i></a>
-				<a target="_blank" href="/" title="itch.io"><i class="fa-brands fa-itch-io"></i></a>
+				<a target="_blank" href="linkedin.com" title="Linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+				<a target="_blank" href="https://github.com/Microwonk" title="Github"><i class="fa-brands fa-github"></i></a>
+				<a target="_blank" href="youtube.com" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+				<a target="_blank" href="steampowered.com" title="Steam"><i class="fa-brands fa-steam"></i></a>
+				<a target="_blank" href="play.google.com" title="Google Play Store"><i class="fa-brands fa-google-play"></i></a>
+				<a target="_blank" href="itch.io" title="itch.io"><i class="fa-brands fa-itch-io"></i></a>
 				<a target="_blank" href="mailto:nicolas.theo.frey@gmail.com" title="Email"><i class="fa-regular fa-envelope"></i></a>
 			</div>
 			<p style=text-align:center>Copyright © 2023 <a href="/">Nicolas Frey</a>.</p>
 		</footer>
 	</div>
+
+	<script>
+		const toggleVisible = (elem, sect) => {
+			$(sect).toggleClass("hidden");
+
+			if ($(sect).hasClass("hidden")) {
+				elem.innerHTML = ">";
+			} else {
+				elem.innerHTML = "v";
+			}
+		};
+	</script>
 	<!-- End -->
 </body>
 

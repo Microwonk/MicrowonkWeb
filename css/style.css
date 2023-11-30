@@ -10,7 +10,7 @@
     --colorText: #eee;
     --colorMain: #ffe2cb;
     --colorBase: #333;
-    --colorBack: #222;
+    --colorBack: #222222;
     --colorRed: #FF5149;
     --colorBrightRed: #ff8f89;
   }
@@ -42,25 +42,21 @@
     user-select: none;
   }
   
-  /*** PAGE WRAPPER START ***/
   .page-wrapper {
     background: var(--colorBack);
     box-sizing: border-box;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     position: relative;
-    width: 70vw;
-    height: 100vh;
-    border-radius: 2%;
+    width: 65vw;
     margin: auto;
   }
 
   #background {
-    position: absolute;
+    position: fixed;
   }
-  /*** PAGE WRAPPER END ***/
-  
-  /*** PAGE HEADER START ***/
+
   .page-header {
     display: flexbox;
     flex-wrap: wrap;
@@ -80,8 +76,7 @@
     font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
    }
-  
-  /*** MINLABOR LOGO AND TEXT START ***/
+
   .logo {
     display: flex;
     justify-content: center;
@@ -100,104 +95,45 @@
     color: var(--colorMain);
     font-family: 'Jua', sans-serif;
     font-weight: 400;
+    left: 4vw;
     position: relative;
     top: .06em;
   }
-  /*** MINLABOR LOGO AND TEXT END ***/
-  
-  /*** NEWSLETTER START ***/
-  .newsletter {
-    max-inline-size: 17.5rem;
-  }
-  
-  .newsletter p {
-    color: var(--colorTextBrighter);
-    text-align: center;
-    padding-bottom: .6rem;
-  }
-  
-  .newsletter-input{
+
+  section {
+    opacity: 1;
+    height: auto;
+    overflow: hidden;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.hidden {
+    opacity: 0;
+    height: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+  .heading-sm {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 16px;
+    padding-left: 3vw;
+    font-family: 'Poppins', sans-serif;
+    color: var(--colorMain);
+    margin-bottom: 4vh;
   }
-  
-  .newsletter input {
-    appearance: none;
-    border: 0px;
-    width: 286px;
-    height: 48px;
-    border-radius: .6rem;
-    background-color: var(--colorBase);
-    padding-left: 2.85rem;
-    padding-right: 16px;
-    color: #ccc;
-    font-size: 1rem;
-    font-family: inherit;
-    user-select: none;
+
+  .heading-sm:hover {
+    color:rgb(163, 163, 163);
   }
-  
-  .newsletter input:focus {
-    outline-style: solid;
-    outline-width: 2px;
-    outline-color: #fff;
+
+  .heading-sm span {
+    color: var(--colorBrightRed);
+    padding-right: 1%;
   }
-  
-  .newsletter .mail {
-    width: 2.3rem;
-    position: absolute;
-    padding: .6rem 0 0 .6rem;
+
+  .heading-sm span:hover {
+    color: var(--colorRed);
   }
-  
-  .newsletter .submit {
-    width: 1.2rem;
-    height: 1.2rem;
-  }
-  
-  .newsletter button {
-    background-color: var(--colorRed);
-    appearance: none;
-    border: 0px;
-    width: 48px;
-    height: 48px;
-    float: right;
-    border-radius: .6rem;
-    cursor: pointer;
-    transition: .15s;
-  }
-  
-  .newsletter button:hover {
-    background-color: var(--colorTextBrighter);
-  }
-  
-  .newsletter button:hover > svg > path {
-    fill: var(--colorRed);
-    transform: scale(.95);
-  }
-  
-  .newsletter button:active {
-    transform: scale(.95);
-  }
-  
-  .successful-color::placeholder {
-    color:#4AD295;
-  }
-  
-  .successful-color {
-    outline-style: solid;
-    outline-width: 2px;
-    outline-color: #4AD295;
-  }
-  
-  .successful-envelope path {
-    fill: #4AD295;
-  }
-  /*** NEWSLETTER END ***/
-  /*** PAGE HEADER END ***/
-  
-  /*** MAIN SECTION START ***/
-  /*** GAME CONTAINER START ***/
+
   .project-container {
     display: flex;
     justify-content: center;
@@ -241,13 +177,7 @@
     border: 4px solid var(--colorRed);
   }
   
-  .not-hoverable {
-    pointer-events: none;
-  }
-  /*** GAME CONTAINER END ***/
-  
-  /*** LOVE PUZZLES BUTTON START ***/
-  .main-button {
+  .portfolio-button {
     min-height: 64px;
     text-decoration: none;
     background-color: var(--colorRed);
@@ -259,321 +189,22 @@
     border-radius: 12px;
     text-align: center;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 1.5rem;
     color: var(--colorTextBrighter);
     transition: .15s ease;
     transition-property: background-color, color;
   }
   
-  .main-button:hover{
+  .portfolio-button:hover{
     background-color: var(--colorTextBrighter);
     color: var(--colorRed);
   }
   
-  .main-button:active {
+  .portfolio-button:active {
     transition: .15s;
     transform: scale(.975)
   }
-  /*** LOVE PUZZLES BUTTON END ***/
-  /*** MAIN SECTION END ***/
-  
-  /*** GAME INFO SECTION START ***/
-  /*** GAME INFO CONTAINER START ***/
-  .game-info-container {
-    max-width: 1130px;
-    width: 100%;
-    height: auto;
-    margin-inline: auto;
-    background: var(--colorBase);
-    border-radius: 24px;
-    padding: 16px;
-  }
-  
-  .game-info-container p {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 24px;
-    color: #fff;
-    padding: 30px;
-  }
-  
-  .image-container {
-    position: relative;
-    max-width: 1098px;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1098/512;
-    margin-bottom: 144px;
-  }
-  
-  .game-banner {
-    border-radius: 12px;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1098/512;
-    object-fit: cover;
-    filter: brightness(67%);
-  }
-  
-  .icon-frame {
-    position: absolute;
-    bottom: -144px;
-    left: 50%;
-    margin-left: calc(clamp(9rem, 6.828rem + 12.41vw, 14.4rem) / -2);
-    background: var(--colorBase);
-    border-radius: 24px;
-    width: clamp(9rem, 6.828rem + 12.41vw, 14.4rem);
-    aspect-ratio: 1;
-    object-fit: cover;
-    padding: 16px;
-    filter: drop-shadow(#000 0px 0px 4px);
-  }
-  
-  .icon-frame img {
-    width: 100%;
-    aspect-ratio: 1;
-    border-radius: 12px;
-  }
-  
-  /*** PLATFORM BUTTONS START ***/
-  .platform-buttons{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 30px;
-  }
-  
-  .platform-buttons a {
-    border-radius: 12px;
-    width: 252px;
-    height: 80px;
-    text-decoration: none;
-    transition: 0.15s;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .platform-buttons a:hover {
-    filter: drop-shadow(#000 0px 0px 8px);
-  }
-  
-  .platform-buttons a:active {
-    transition: .15s;
-    transform: scale(.975)
-  }
-  
-  .platform-buttons [href*='store.steampowered.com'] {background-image: url("../assets/platforms/steam.svg");}
-  .platform-buttons [href*='itch.io'] {background-image: url("../assets/platforms/itch-io.svg");}
-  .platform-buttons [href*='humblebundle.com'] {background-image: url("../assets/platforms/humble.svg");}
-  .platform-buttons [href*='gog.com'] {background-image: url("../assets/platforms/gog.svg");}
-  .platform-buttons [href*='play.google.com'] {background-image: url("../assets/platforms/google-play.svg");}
-  .platform-buttons [href*='apps.apple.com'] {background-image: url("../assets/platforms/app-store.svg");}
-  .platform-buttons [href*='appgallery.huawei.com'] {background-image: url("../assets/platforms/appgallery.svg");}
-  .platform-buttons [href*='nintendo.com'] {background-image: url("../assets/platforms/nintendo-eshop.svg");}
-  .platform-buttons [href*='xbox.com'] {background-image: url("../assets/platforms/xbox.svg");}
-  .platform-buttons [href*='store.playstation.com'] {background-image: url("../assets/platforms/playstation.svg");}
-  .platform-buttons [href*='press'] {background-image: url("../assets/platforms/press-kit.svg");}
-  /*** PLATFORM BUTTONS ENDS ***/
-  /*** GAME INFO CONTAINER END ***/
-  
-  /*** SCREENSHOTS STARTS ***/
-  .screenshots-container{
-    margin-top: 60px;
-    max-width: 1130px;
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-inline: auto;
-    gap: 16px;
-    background: var(--colorBase);
-    border-radius: 24px;
-    padding: 16px;
-  }
-  
-  .rounded-inside{
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
-  }
-  
-  .swiper-slide img {
-    width: 100%;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-  }
-  
-  .swiper-slide img:active {
-    cursor: grabbing;
-  }
-  
-  .swiper .swiper-button-prev, .swiper .swiper-button-next{
-    color: #fff;
-    filter: drop-shadow(#000 0px 0px 4px);
-  }
-  
-  .swiper .swiper-button-prev{
-    left: var(--swiper-navigation-sides-offset, 15px);
-    right: auto
-  }
-  
-  .swiper .swiper-button-next{
-    right: var(--swiper-navigation-sides-offset, 15px);
-    left: auto;
-  }
-  
-  .swiper .swiper-pagination-bullet-active{
-    background: #fff;
-    filter: drop-shadow(#000 0px 0px 4px);
-  }
-  /*** SCREENSHOTS END ***/
-  /*** GAME INFO SECTION END ***/
-  
-  /*** ABOUT SECTION START ***/
-  /*** ABOUT CONTAINER START ***/
-  .about-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 60px;
-    justify-content: center;
-    max-width: 1164px;
-    margin-inline: auto;
-  }
-  
-  .about {
-    text-align: center;
-    flex-direction: column;
-    flex-basis: 1130px;
-    max-width: 57rem;
-    background: var(--colorBase);
-    border-radius: 24px;
-    padding: 16px;
-  }
-  
-  .about p {
-    font-size: 24px;
-    margin-inline: auto;
-    max-width: 850px;
-  }
-  
-  .about h2 {
-    font-weight: 600;
-    color: #fff;
-    pointer-events: none;
-  }
-  
-  .about-buttons {
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-    justify-content: center;
-    align-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-inline: auto;
-    padding-top: 30px;
-  }
-  
-  .about-button {
-    min-height: 48px;
-    width: 240px;
-    text-decoration: none;
-    background-color: var(--colorRed);
-    border-radius: 12px;
-    text-align: center;
-    font-weight: 600;
-    font-size: 24px;
-    color: var(--colorTextBrighter);
-    transition: .15s ease;
-    transition-property: background-color, color;
-    display: flex;
-    flex-wrap: wrap;
-    line-height: 2.4rem;
-    padding-block: 0;
-    display: inline-block;
-  }
-  
-  .about-button:hover {
-    background-color: var(--colorTextBrighter);
-    color: var(--colorRed);
-  }
-  
-  .about-button:active {
-    transition: .15s;
-    transform: scale(.975)
-  }
-  /*** ABOUT CONTAINER END ***/
-  
-  /*** AUTHOR CONTAINER START ***/
-  .author-container{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-    max-width: 1130px;
-    margin-inline: auto;
-  }
-  
-  .author {
-    max-width: 550px;
-    width: 100%;
-    text-align: center;
-    background: var(--colorBase);
-    border-radius: 24px;
-    padding: 16px;
-  }
-  
-  .author .title {
-    font-weight: 300;
-      color: #ddd;
-      margin-inline: 0px;
-  }
-  
-  .author p {
-    font-size: 20px;
-    margin-inline: 14px;
-    max-width: 850px;
-  }
-  
-  .author h3 {
-      font-size: 24px;
-      color: #fff;
-    font-weight: 600;
-  }
-  
-  .author .nickname {
-    color: var(--colorRed);
-  }
-  
-  .author img {
-    display: block;
-    margin-inline: auto;
-    border-radius: 12px;
-    max-width: auto;
-    width: 100%;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    pointer-events: none;
-  }
-  
-  .author .meta {
-    margin-block: 16px;
-  }
-  /*** AUTHOR CONTAINER END ***/
-  /*** ABOUT SECTION END ***/
-  
-  /*** FOOTER SECTION START ***/
+
   footer {
     width: 100%;
     padding: 3rem 0rem;
@@ -581,7 +212,6 @@
     margin-inline: auto;
   }
   
-  /*** SOCIAL ICONS START ***/
   footer .social-links {
     display: flex;
     justify-content: center;
@@ -606,24 +236,16 @@
     height: 100%;
   }
   
-  .social-links [href*='discord.gg']:hover {color: #5662F6;}
+  .social-links [href*='discordapp.com']:hover {color: #5662F6;}
   .social-links [href*='instagram.com']:hover {color: #F13268;}
-  .social-links [href*='threads.net']:hover {color: #F13268;}
-  .social-links [href*='x.com']:hover {color: #1D9BF0;}
-  .social-links [href*='bsky.app']:hover {color: #1D9BF0;}
-  .social-links [href*='mastodon.gamedev.place']:hover {color: #6363FF;}
-  .social-links [href*='tiktok.com']:hover {color: #FE2C55;}
-  .social-links [href*='reddit.com']:hover {color: #FF4300;}
-  .social-links [href*='facebook.com']:hover {color: #1178F2;}
   .social-links [href*='linkedin.com']:hover {color: #0A66C2;}
+  .social-links [href*='github.com']:hover {color: rgb(81, 0, 83);}
   .social-links [href*='youtube.com']:hover {color: #FF0000;}
   .social-links [href*='steampowered.com']:hover {color: #1382B3;}
   .social-links [href*='play.google.com']:hover {color: #EFB701;}
   .social-links [href*='itch.io']:hover {color: #FA5C5C;}
   .social-links [href^='mailto:']:hover {color: #4AD295;}
-  /*** SOCIAL ICONS END ***/
-  
-  /*** FOOTER TEXT START ***/
+
   footer p {
     margin-block-start: 60px;
   }
@@ -635,49 +257,11 @@
   footer a:hover {
     color: var(--colorRed);
   }
-  /*** FOOTER TEXT END ***/
-  /*** FOOTER SECTION END ***/
-  
-  /*** PRIVACY SECTION START ***/
-  .text-container{
-    max-width: 1130px;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-inline: auto;
-    background: var(--colorBase);
-    border-radius: 24px;
-    padding: 16px;
-    gap: 16px;
-    color: #eee;
-    text-align: center;
-  }
-  /*** PRIVACY SECTION END ***/
   
   @media (max-width: 1162px) {
     .author{
       max-width: calc(50vw - 15px - 16px);
       min-width: 248px;
-    }
-  }
-  
-  @media (max-width: 620px) {
-    .logo {
-      font-size: clamp(0.444rem, 0.042rem + 2.68vw, 1rem);
-    }
-    .author{
-      max-width: 620px;
-    }
-  }
-  
-  @media (max-width: 573px) {
-    .about-buttons {
-      gap: 16px;
-    }
-  
-    .about-button {
-      width: 100%;
     }
   }
   
@@ -699,32 +283,5 @@
       padding: 30px 0px;
     }
   }
-  
-  @media (max-width: 381px) {
-    .newsletter input {
-      width: 100%;
-    }
-  
-    .newsletter p {
-      font-size: clamp(10px, 5vw, 20px);
-    }
-  
-    .newsletter button {
-      aspect-ratio: 1;
-    }
-  }
-  
-  @media (max-width: 316px) {
-    .platform-buttons a {
-      border-radius: 12px;
-      width: 216px;
-      height: auto;
-      aspect-ratio: 252/80;
-      text-decoration: none;
-      transition: 0.15s;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-    }
-  }
+
   

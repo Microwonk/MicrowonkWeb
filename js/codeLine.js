@@ -29,7 +29,7 @@ var skip_count = 0;
 var typeVis = false;
 
 const skip_delay = 15;
-const speed = 80;
+const speed = 100;
 
 const wordflick = () => {
 
